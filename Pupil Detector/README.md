@@ -13,7 +13,7 @@ common properties.
 There are different parameters of `BlobDetection` and in this program, we can select
 the area, circularity, inertia, and convexity of the detector.
 
-![img.png](https://raw.githubusercontent.com/FatihcDeniz/Artifical-Intelligence-and-Machine-Learning-Projects/main/Pupil%20Detector/Images/BlobTest.webp?token=GHSAT0AAAAAABR5FUENO455TFBHAP43JGFGYSJXGIQ)
+![img.png](https://github.com/FatihcDeniz/Artifical-Intelligence-and-Machine-Learning-Projects/blob/main/Pupil%20Detector/Images/BlobTest.webp)
 
 Area parameter filters blobs based on their size. Circularity measures
 how close to a circle the blob is. Inertia measures how elongated the shape 
@@ -35,20 +35,20 @@ Pupil more detectable.
 
 This picture shows original eye images:
 
-![image](https://raw.githubusercontent.com/FatihcDeniz/Artifical-Intelligence-and-Machine-Learning-Projects/main/Pupil%20Detector/Images/Screen%20Shot%202022-04-03%20at%2015.05.53.png?token=GHSAT0AAAAAABR5FUEMCLN456OILHFI6YKSYSJXF6A)
+![image](https://github.com/FatihcDeniz/Artifical-Intelligence-and-Machine-Learning-Projects/blob/main/Pupil%20Detector/Images/Screen%20Shot%202022-04-03%20at%2015.05.53.png)
 
 and this shows how eye images look after binary transformations and other processing techniques.
 
-![](https://raw.githubusercontent.com/FatihcDeniz/Artifical-Intelligence-and-Machine-Learning-Projects/main/Pupil%20Detector/Images/Screen%20Shot%202022-04-03%20at%2015.06.02.png?token=GHSAT0AAAAAABR5FUEMLPCWFLL3KO2LLM5AYSJXGWQ)
+![](https://github.com/FatihcDeniz/Artifical-Intelligence-and-Machine-Learning-Projects/blob/main/Pupil%20Detector/Images/Screen%20Shot%202022-04-03%20at%2015.06.02.png)
 
 It is also possible to visualize Pupils by using contours. Contours are simply curves joining
 all the continuous points having the same color and intensity. 
 
-![](https://github.com/FatihcDeniz/Artifical-Intelligence-and-Machine-Learning-Projects/blob/main/Pupil%20Detector/Images/Screen%20Shot%202022-04-03%20at%2017.02.15.png?raw=true)
+![](https://github.com/FatihcDeniz/Artifical-Intelligence-and-Machine-Learning-Projects/blob/main/Pupil%20Detector/Images/Screen%20Shot%202022-04-03%20at%2017.02.15.png)
 
 This program also allows us to show `face mesh` using `mediapipe` library. 
 
-![](https://raw.githubusercontent.com/FatihcDeniz/Artifical-Intelligence-and-Machine-Learning-Projects/main/Pupil%20Detector/Images/Screen%20Shot%202022-04-03%20at%2017.01.52.png?token=GHSAT0AAAAAABR5FUEM2N3TMIACV63JABDWYSJXG7Q)
+![](https://github.com/FatihcDeniz/Artifical-Intelligence-and-Machine-Learning-Projects/blob/main/Pupil%20Detector/Images/Screen%20Shot%202022-04-03%20at%2017.01.52.png)
 
 And finally, it allows us to detect head position. This is done by using
 landmarks in the `media pipe` library. Based on the nose landmark location 
