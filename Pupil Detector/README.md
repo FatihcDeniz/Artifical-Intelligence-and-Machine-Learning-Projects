@@ -12,6 +12,7 @@ common properties.
 
 There are different parameters of `BlobDetection` and in this program, we can select
 the area, circularity, inertia, and convexity of the detector.
+
 ![img.png](https://raw.githubusercontent.com/FatihcDeniz/Artifical-Intelligence-and-Machine-Learning-Projects/main/Pupil%20Detector/Images/BlobTest.webp?token=GHSAT0AAAAAABR5FUENO455TFBHAP43JGFGYSJXGIQ)
 
 Area parameter filters blobs based on their size. Circularity measures
