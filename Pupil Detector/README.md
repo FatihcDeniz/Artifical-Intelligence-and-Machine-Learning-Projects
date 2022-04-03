@@ -60,7 +60,7 @@ in the video we project a point to estimate where it is located.
 
 #### How to run:
 
-You can run this program by writing `python eye-tracking.py` in the terminal.
+You can run this program by writing `python pupil-detector.py` in the terminal.
 
 References:
 - https://opencv24-python-tutorials.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_morphological_ops/py_morphological_ops.html
