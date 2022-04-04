@@ -1,8 +1,8 @@
 # Tic-Tac-Toe AI
 
-This is a Tic-Tac-Toe AI taht uses minimax algorithm to play.
+This is a Tic-Tac-Toe AI that uses a minimax algorithm to play.
 
-This is originally created for cs50AI couse from Harvard.
+This is originally created for the cs50AI course from Harvard.
 
 ## Requirements
 
