@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+        <title>Netherlands Rent Prediction</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Netherlands Rent Predictor</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Adress</h2>
+                <form action="/" method="post" name="select">
+                    <select name = 'city', id = 'city' onchange="select.submit()" selected="{{ selected_city }}">
+                        {% for city in cities%}
+                            {% if city == selected_city %}
+                                <option value = "{{city}}" selected="{{ selected_city }}">{{selected_city}}</option>
+                            {% else %}
+                                <option value = "{{city}}">{{city}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <select name = 'address', id = 'address'>
+                        {% for n in neighborhoods %}
+                            <option value="{{n}}">{{n}}</option>
+                        {% endfor %}
+                    </select>
+                    <select name = 'room_type', id = 'room_type'>
+                        <option selected disabled> Room Type</option>
+                        {% for room in room_type%}
+                            <option value = "{{room}}"">{{room}}</option>
+                        {% endfor %}
+                    </select>
+                    <select name = 'utilities', id = 'utilities'>
+                        <option selected disabled >Utilities</option>
+                        {% for util in utilities%}
+                            <option value = "{{util}}"">{{util}}</option>
+                        {% endfor %}
+                    </select>
+                    <select name = 'number_of_rooms', id = 'number_of_rooms'>
+                        <option selected disabled >Number of Rooms</option>
+                        {% for r in number_of_rooms%}
+                            <option value = "{{r}}"">{{r}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="number" min ='0' name="surface" placeholder="Surface">
+                    <div class="housing_info">
+                    <h2 style="margin-top: 20px;">Housing Info</h2>
+                    <select name = 'furnish', id = 'furnish'>
+                        <option selected disabled>Furnishing</option>
+                        {% for furnish in furnish%}
+                            <option value = "{{furnish}}"">{{furnish}}</option>
+                        {% endfor %}
+                    </select>
+                    <select name = 'living_room', id = 'living_room'>
+                        <option selected disabled>Living Room</option>
+                        {% for living_room in living_room%}
+                            <option value = "{{living_room}}"">{{living_room}}</option>
+                        {% endfor %}
+                    </select>
+                    <select name = 'kitchen', id = 'kitchen'>
+                        <option selected disabled>Kitchen</option>
+                        {% for kitchen in kitchen%}
+                            <option value = "{{kitchen}}"">{{kitchen}}</option>
+                        {% endfor %}
+                    </select>
+                    <select name = 'shower', id = 'shower'>
+                        <option selected disabled>Shower</option>
+                        {% for shower in shower%}
+                            <option value = "{{shower}}"">{{shower}}</option>
+                        {% endfor %}
+                    </select>
+                    <select name = 'toilet', id = 'toilet'>
+                        <option selected disabled>Toilet</option>
+                        {% for toilet in toilet%}
+                            <option value = "{{toilet}}"">{{toilet}}</option>
+                        {% endfor %}
+                    </select>
+                    <select name = 'internet', id = 'internet'>
+                        <option selected disabled>Internet</option>
+                        {% for internet in internet%}
+                            <option value = "{{internet}}"">{{internet}}</option>
+                        {% endfor %}
+                    </select>
+                    <select name = 'energy_label', id = 'energy_label'>
+                        <option selected disabled>Energy Label</option>
+                        {% for energy_label in energy_label%}
+                            <option value = "{{energy_label}}"">{{energy_label}}</option>
+                        {% endfor %}
+                    </select>
+                    </div>
+                    <button class="btn btn-primary" type="submit" name="submit_button" style="margin-top: 20px;">Predict</button>
+                <script>
+                    function myfunction() {
+                        var city = document.getElementById('city');
+
+                        c  = city.value;
+                        };
+                </script>
+                <h5 style="margin-top: 20px;">Prediction value of Rent: {{ predictionx }}</h5>
+            </div>
+
+            <div class="section">
+
+                <h2>All Rental Places</h2>
+                <table class="table table-bordered table-white">
+                    <thead>
+                        <tr class="table-active">
+                            <th>Address</th>
+                            <th>City</th>
+                            <th>Rent</th>
+                            <th>Surface</th>
+                            <th>Number of Rooms</th>
+                            <th>Utilities</th>
+                            <th>Website</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if not selected_data.empty%}
+                            {% for i in range(selected_data.shape[0]) %}
+                                <tr>
+                                    <td class="table-light">{{ selected_data["city"].iloc[i] }}</td>
+                                    <td class="table-light">{{ selected_data["adress"].iloc[i] }}</td>
+                                    <td class="table-light">{{ selected_data['rent'].iloc[i]}}</td>
+                                    <td class="table-light">{{ selected_data['surface m2'].iloc[i]}}</td>
+                                    <td class="table-light">{{ selected_data['room'].iloc[i]}}</td>
+                                    <td class="table-light">{{ selected_data['utilities'].iloc[i]}}</td>
+                                    <td class="table-light"><a target="_blank" href="{{ selected_data['link'].iloc[i]}}">Link</a></td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" formtarget="_blank" name="map_button" id="map_button">Map</button>
+        
+        <button class="btn btn-primary" type="submit" formtarget="_blank" name="density_map_button" id="density_map_button">Density Map</button>
+
+        </form>
+    </body>
+</html>
