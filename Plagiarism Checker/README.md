@@ -1,6 +1,9 @@
 
 # Plagarism-Checker Python
 
+## You can try app from this link:
+  https://share.streamlit.io/fatihcdeniz/plagarism-checker/main/plagiarism.py
+
 ## Problem Definition:
 
 Plagiarism is using some other person's ideas and information without acknowledging that person in the source. One of the ways to avoid plagiarism is paraphrasing, creating the same information with your own words, it is possible not to paraphrase properly, and this could create problems. This uses different distance measures and text embedding techniques to calculate the similarity between multiple texts.
