@@ -1,4 +1,3 @@
-from jellyfish import hamming_distance
 from sklearn.metrics import euclidean_distances
 import streamlit as st
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
@@ -9,7 +8,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import spacy
 import tensorflow_hub as hub
-from yaml import load
 from sentence_transformers import SentenceTransformer
 import nltk
 from nltk.corpus import stopwords
